@@ -5,10 +5,7 @@ config({ path: '.env' })
 
 export const conectarMongoDb = async () => {
   try {
-    await mongoose.connect(process.env.DB_MONGO, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
+    await mongoose.connect(process.env.DB_MONGO)
     console.log('|=> La base de datos mongoDb conecto exitosamente <=|')
   } catch (error) {
     console.log(error)
