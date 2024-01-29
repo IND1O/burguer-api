@@ -21,7 +21,7 @@ export const crearTipo = async (req, res) => {
 }
 export const mostrarTipos = async (req, res) => {
   try {
-    const { sabor } = req.query
+    const { sabor } = req.body
     const existeSabor = await Sabor.findById(sabor)
     if (!existeSabor) {
       return res.status(404).json({ mensaje: 'No se encontro el sabor' })
